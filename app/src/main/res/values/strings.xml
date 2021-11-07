@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">GithubUserApp3</string>
+    <string name="bio">Bio</string>
+    <string name="splash_screen_text">Github User App</string>
+    <string name="name">Name</string>
+    <string name="username">Username</string>
+    <string name="company">Company</string>
+    <string name="location">Location</string>
+    <string name="followers_value">followers_v</string>
+    <string name="following_value">following_v</string>
+    <string name="followers">followers</string>
+    <string name="following">following</string>
+    <string name="profile_image">profileImage</string>
+    <string name="blog">Blog</string>
+    <string name="tab_text_1">Followers</string>
+    <string name="tab_text_2">Following</string>
+    <string name="tabs">tabs</string>
+    <string name="search_hint">Cari user Github </string>
+    <string name="no_data">Data kosong</string>
+    <string name="text_failed_load">Gagal memuat data,silahkan coba lagi</string>
+    <string name="setting">setting</string>
+    <string name="dark_mode">Dark Mode</string>
+    <string name="favorite">favorite</string>
+    <string name="user_favorite">User Favorite</string>
+    <string name="favorite_button">Favorite Button</string>
+    <string name="repository">repository</string>
+    <string name="repository_value">repository_v</string>
+</resources>

@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/Background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:focusable="auto"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical"
+    tools:context=".ui.detail.DetailActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/detail_animation_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/detail_anim_loader"
+                    android:layout_width="250dp"
+                    android:layout_height="250dp"
+                    android:layout_gravity="center_horizontal"
+                    android:visibility="gone"
+                    app:lottie_autoPlay="true"
+                    app:lottie_loop="true"
+                    app:lottie_rawRes="@raw/loader" />
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/detail_no_internet"
+                    android:layout_width="250dp"
+                    android:layout_height="250dp"
+                    android:layout_gravity="center_horizontal"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.8"
+                    app:lottie_autoPlay="true"
+                    app:lottie_loop="true"
+                    app:lottie_rawRes="@raw/no_internet" />
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/detail_failed_data_load"
+                    android:layout_width="250dp"
+                    android:layout_height="250dp"
+                    android:layout_gravity="center_horizontal"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.8"
+                    app:lottie_autoPlay="true"
+                    app:lottie_loop="true"
+                    app:lottie_rawRes="@raw/failed_load_data" />
+
+                <TextView
+                    android:id="@+id/tv_failed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:fontFamily="@font/consolas"
+                    android:text="@string/text_failed_load"
+                    android:textAlignment="center"
+                    android:textColor="@color/black_3333"
+                    android:textSize="24sp"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.6" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/detail_data_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="true"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.appbar.AppBarLayout
+                        android:id="@+id/app_bar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <com.google.android.material.appbar.MaterialToolbar
+                            android:layout_width="match_parent"
+                            android:layout_height="?actionBarSize"
+                            app:title="@string/app_name" />
+                    </com.google.android.material.appbar.AppBarLayout>
+
+
+                    <ImageView
+                        android:id="@+id/detail_image"
+                        android:layout_width="72dp"
+                        android:layout_height="72dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:contentDescription="@string/profile_image"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/app_bar" />
+
+                    <TextView
+                        android:id="@+id/detail_name"
+                        style="@style/TextNameDetailUser"
+                        android:layout_marginStart="16dp"
+                        android:text="@string/name"
+                        app:layout_constraintBottom_toBottomOf="@+id/detail_image"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toEndOf="@+id/detail_image"
+                        app:layout_constraintTop_toTopOf="@+id/detail_image"
+                        app:layout_constraintVertical_bias="0.0" />
+
+                    <TextView
+                        android:id="@+id/detail_username"
+                        style="@style/TextUsernameDetailUser"
+                        android:layout_marginStart="16dp"
+                        android:text="@string/username"
+                        app:layout_constraintEnd_toEndOf="@+id/detail_name"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toEndOf="@+id/detail_image"
+                        app:layout_constraintTop_toBottomOf="@+id/detail_name" />
+
+                    <TextView
+                        android:id="@+id/detail_bio"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:lines="2"
+                        android:maxLines="2"
+                        android:singleLine="false"
+                        android:text="@string/bio"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/detail_image"
+                        app:layout_constraintTop_toBottomOf="@+id/detail_image" />
+
+                    <TextView
+                        android:id="@+id/detail_company"
+                        style="@style/TextDetailUser"
+                        android:text="@string/company"
+                        app:drawableStartCompat="@drawable/ic_office_building"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/detail_image"
+                        app:layout_constraintTop_toBottomOf="@+id/detail_bio" />
+
+                    <TextView
+                        android:id="@+id/detail_location"
+                        style="@style/TextDetailUser"
+                        android:text="@string/location"
+                        app:drawableStartCompat="@drawable/ic_baseline_location_on_18"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/detail_image"
+                        app:layout_constraintTop_toBottomOf="@+id/detail_company" />
+
+                    <TextView
+                        android:id="@+id/detail_blog"
+                        style="@style/TextDetailUser"
+                        android:text="@string/blog"
+                        app:drawableStartCompat="@drawable/ic_link"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/detail_image"
+                        app:layout_constraintTop_toBottomOf="@+id/detail_location" />
+
+                    <TextView
+                        android:id="@+id/detail_followers_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="16dp"
+                        android:drawablePadding="4dp"
+                        android:text="@string/followers_value"
+                        app:drawableStartCompat="@drawable/ic_person"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/detail_image"
+                        app:layout_constraintTop_toBottomOf="@id/detail_blog" />
+
+                    <TextView
+                        android:id="@+id/detail_followers"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        android:drawablePadding="4dp"
+                        android:text="@string/followers"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toEndOf="@+id/detail_followers_value"
+                        app:layout_constraintTop_toBottomOf="@id/detail_blog" />
+
+                    <TextView
+                        android:id="@+id/detail_following_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginTop="8dp"
+                        android:drawablePadding="4dp"
+                        android:text="@string/following_value"
+
+                        app:drawableStartCompat="@drawable/ic_baseline_dot"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toEndOf="@+id/detail_followers"
+                        app:layout_constraintTop_toBottomOf="@id/detail_blog" />
+
+                    <TextView
+                        android:id="@+id/detail_following"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        android:drawablePadding="4dp"
+                        android:text="@string/following"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toEndOf="@+id/detail_following_value"
+                        app:layout_constraintTop_toBottomOf="@id/detail_blog" />
+
+                    <TextView
+                        android:id="@+id/detail_repo_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="16dp"
+                        android:drawablePadding="4dp"
+                        android:text="@string/repository_value"
+                        android:textColor="?android:textColorPrimary"
+                        app:drawableStartCompat="@drawable/ic_repo"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/detail_image"
+                        app:layout_constraintTop_toBottomOf="@id/detail_followers_value" />
+
+                    <TextView
+                        android:id="@+id/detail_repo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:drawablePadding="4dp"
+                        android:text="@string/repository"
+                        android:textColor="?android:textColorPrimary"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toEndOf="@+id/detail_repo_value"
+                        app:layout_constraintTop_toBottomOf="@+id/detail_followers_value" />
+
+
+                    <com.google.android.material.floatingactionbutton.FloatingActionButton
+                        android:id="@+id/detail_fab_favorite"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="16dp"
+                        android:contentDescription="@string/favorite_button"
+                        app:fabSize="normal"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:srcCompat="@drawable/ic_favorite_24" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/detail_tabs"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:background="@color/primaryColor"
+                    android:contentDescription="@string/tabs"
+                    app:tabTextColor="@color/secondaryTextColor" />
+
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/detail_view_pager"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="?android:colorPrimary" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

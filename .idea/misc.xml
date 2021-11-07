@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Android Project/GithubUserApp3/app/src/main/res/drawable/background_search_view.xml" value="0.1125" />
+        <entry key="..\:/Android Project/GithubUserApp3/app/src/main/res/layout/activity_detail.xml" value="0.1" />
+        <entry key="..\:/Android Project/GithubUserApp3/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Android Project/GithubUserApp3/app/src/main/res/layout/activity_setting.xml" value="0.12771739130434784" />
+        <entry key="..\:/Android Project/GithubUserApp3/app/src/main/res/layout/activity_splash_screen.xml" value="0.1" />
+        <entry key="..\:/Android Project/GithubUserApp3/app/src/main/res/layout/fragment_followers_and_following.xml" value="0.12771739130434784" />
+        <entry key="..\:/Android Project/GithubUserApp3/app/src/main/res/layout/item_user.xml" value="0.1" />
+        <entry key="..\:/Android Project/GithubUserApp3/app/src/main/res/layout/item_user_follows.xml" value="0.12771739130434784" />
+        <entry key="..\:/Android Project/GithubUserApp3/app/src/main/res/menu/option_menu.xml" value="0.17447916666666666" />
+        <entry key="..\:/Users/Alf/AndroidStudioProjects/GithubUserApp3/app/src/main/res/drawable/background_search_view.xml" value="0.21296296296296297" />
+        <entry key="..\:/Users/Alf/AndroidStudioProjects/GithubUserApp3/app/src/main/res/drawable/ic_baseline_dot.xml" value="0.18645833333333334" />
+        <entry key="..\:/Users/Alf/AndroidStudioProjects/GithubUserApp3/app/src/main/res/drawable/ic_baseline_favorite_24.xml" value="0.21296296296296297" />
+        <entry key="..\:/Users/Alf/AndroidStudioProjects/GithubUserApp3/app/src/main/res/drawable/ic_baseline_location_on_18.xml" value="0.1515625" />
+        <entry key="..\:/Users/Alf/AndroidStudioProjects/GithubUserApp3/app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.1515625" />
+        <entry key="..\:/Users/Alf/AndroidStudioProjects/GithubUserApp3/app/src/main/res/drawable/ic_baseline_settings_24.xml" value="0.1" />
+        <entry key="..\:/Users/Alf/AndroidStudioProjects/GithubUserApp3/app/src/main/res/drawable/ic_launcher_background.xml" value="0.10989583333333333" />
+        <entry key="..\:/Users/Alf/AndroidStudioProjects/GithubUserApp3/app/src/main/res/drawable/ic_link.xml" value="0.18645833333333334" />
+        <entry key="..\:/Users/Alf/AndroidStudioProjects/GithubUserApp3/app/src/main/res/drawable/ic_office_building.xml" value="0.18645833333333334" />
+        <entry key="..\:/Users/Alf/AndroidStudioProjects/GithubUserApp3/app/src/main/res/drawable/ic_person.xml" value="0.18645833333333334" />
+        <entry key="..\:/Users/Alf/AndroidStudioProjects/GithubUserApp3/app/src/main/res/drawable/ic_repo.xml" value="0.18645833333333334" />
+        <entry key="..\:/Users/Alf/AndroidStudioProjects/GithubUserApp3/app/src/main/res/layout/activity_detail.xml" value="0.25" />
+        <entry key="..\:/Users/Alf/AndroidStudioProjects/GithubUserApp3/app/src/main/res/layout/activity_favorite.xml" value="0.1" />
+        <entry key="..\:/Users/Alf/AndroidStudioProjects/GithubUserApp3/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Users/Alf/AndroidStudioProjects/GithubUserApp3/app/src/main/res/layout/activity_setting.xml" value="0.1118659420289855" />
+        <entry key="..\:/Users/Alf/AndroidStudioProjects/GithubUserApp3/app/src/main/res/layout/activity_splash_screen.xml" value="0.1" />
+        <entry key="..\:/Users/Alf/AndroidStudioProjects/GithubUserApp3/app/src/main/res/layout/fragment_follows.xml" value="0.1" />
+        <entry key="..\:/Users/Alf/AndroidStudioProjects/GithubUserApp3/app/src/main/res/layout/item_user.xml" value="0.1" />
+        <entry key="..\:/Users/Alf/AndroidStudioProjects/GithubUserApp3/app/src/main/res/layout/item_user_follows.xml" value="0.1" />
+        <entry key="..\:/Users/Alf/AndroidStudioProjects/GithubUserApp3/app/src/main/res/menu/option_menu.xml" value="0.17037037037037037" />
+        <entry key="..\:/Users/Alf/AndroidStudioProjects/GithubUserApp3/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.10989583333333333" />
+        <entry key="..\:/Users/Alf/AndroidStudioProjects/GithubUserApp3/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.10989583333333333" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
