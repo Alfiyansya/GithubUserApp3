@@ -30,13 +30,13 @@ class DetailActivity : AppCompatActivity() {
         binding = ActivityDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
         binding.detailDataLayout.visibility = View.GONE
-        val user = intent.getParcelableExtra<UserResponse>(KEY_USER)
         val username = intent.getStringExtra(KEY_USERNAME)
         username?.let{
-            user?.let { userResponse -> checkInternetConnection(it, userResponse) } }
+             checkInternetConnection(it) }
     }
 
-    private fun checkInternetConnection(username : String, user : UserResponse) {
+    private fun checkInternetConnection(username : String) {
+        val user = intent.getParcelableExtra<UserResponse>(KEY_USER)
         val networkConnection = NetworkConnection(applicationContext)
         networkConnection.observe(this, { isConnected ->
             if (isConnected) {
@@ -44,7 +44,7 @@ class DetailActivity : AppCompatActivity() {
                 val favorite = FavoriteEntity()
                 favorite.login = username
                 favorite.id = intent.getIntExtra(KEY_ID, 0)
-                favorite.avatar_url = user.avatarUrl
+                favorite.avatar_url = user?.avatarUrl
                 val detailViewModel: DetailViewModel by viewModels {
                     DetailViewModelFactory(username, application)
                 }
