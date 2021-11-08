@@ -58,13 +58,13 @@ class DetailViewModel(username: String, app: Application) : ViewModel() {
         }
     }
 
-    companion object {
-        private const val TAG = "DetailViewModel"
-    }
-
     override fun onCleared() {
         super.onCleared()
         viewModelJob.cancel()
+    }
+
+    companion object {
+        private const val TAG = "DetailViewModel"
     }
 
 }

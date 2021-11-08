@@ -3,6 +3,7 @@ package com.alfian.githubuserapp3.ui.favorite
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -55,10 +56,20 @@ class FavoriteActivity : AppCompatActivity() {
     private fun setUserFavorite() {
         favoriteViewModel = obtainViewModel(this@FavoriteActivity)
         favoriteViewModel.getAllFavorites().observe(this@FavoriteActivity, { favList ->
-            if (favList != null) {
+            if (favList !=null){
                 adapter.setListFavorite(favList)
             }
+            if (favList.isEmpty()){
+                showNoDataSaved(true)
+            }
+            else{
+                showNoDataSaved(false)
+
+            }
         })
+    }
+    private fun showNoDataSaved(isNoData: Boolean) {
+        binding?.favNoData?.visibility = if (isNoData) View.VISIBLE else View.GONE
     }
 
     override fun onDestroy() {
