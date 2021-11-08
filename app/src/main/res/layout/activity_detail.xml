@@ -78,7 +78,6 @@
                     android:fontFamily="@font/consolas"
                     android:text="@string/text_failed_load"
                     android:textAlignment="center"
-                    android:textColor="@color/black_3333"
                     android:textSize="24sp"
                     android:visibility="gone"
                     app:layout_constraintBottom_toBottomOf="parent"

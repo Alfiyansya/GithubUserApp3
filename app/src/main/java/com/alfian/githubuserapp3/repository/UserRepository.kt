@@ -15,10 +15,8 @@ import retrofit2.Response
 
 object UserRepository {
     val user = MutableLiveData<ArrayList<UserResponse>?>()
-    val userDetail = MutableLiveData<UserResponse?>()
     val userSearch = MutableLiveData<ArrayList<UserResponse>?>()
     val isLoading = MutableLiveData<Boolean>()
-    val isNoInternet = MutableLiveData<Boolean>()
     val isDataFailed = MutableLiveData<Boolean>()
     var viewModelJob = Job()
     private val coroutineScope = CoroutineScope(viewModelJob + Dispatchers.Main)
@@ -29,10 +27,10 @@ object UserRepository {
             val getUserDeferred = ApiConfig.getApiService().getUserListAsync()
             try {
                 isLoading.value = false
+                isDataFailed.value = false
                 user.postValue(getUserDeferred)
             } catch (e: Exception) {
                 isLoading.value = false
-                isNoInternet.value = false
                 isDataFailed.value = true
                 Log.e(TAG, "onFailure: ${e.message.toString()}")
             }
@@ -49,6 +47,7 @@ object UserRepository {
             ) {
                 if (response.isSuccessful) {
                     isLoading.value = false
+                    isDataFailed.value = false
                     val responseBody = response.body()
                     if (responseBody != null) {
                         if (responseBody.items != null) {
@@ -60,28 +59,11 @@ object UserRepository {
 
             override fun onFailure(call: Call<SearchResponse>, t: Throwable) {
                 isLoading.value = false
-                isNoInternet.value = false
                 isDataFailed.value = true
                 Log.e("UserRepo", "onFailure: ${t.message.toString()}")
             }
 
         })
 
-    }
-
-    suspend fun getDetailUser(username: String) {
-        coroutineScope.launch {
-            isLoading.value = true
-            val getUserDetailDeferred = ApiConfig.getApiService().getDetailUserAsync(username)
-            try {
-                isLoading.value = false
-                userDetail.postValue(getUserDetailDeferred)
-            } catch (e: Exception) {
-                isLoading.value = false
-                isNoInternet.value = false
-                isDataFailed.value = true
-                Log.e(TAG, "onFailure: ${e.message.toString()}")
-            }
-        }
     }
 }

@@ -122,12 +122,6 @@ class MainActivity : AppCompatActivity(), Toolbar.OnMenuItemClickListener {
                         setUserData()
                     }
                 })
-                mainViewModel.searchUser.observe(this@MainActivity) { searchUserResponse ->
-                    if (searchUserResponse != null) {
-                        adapter.addDataToList(searchUserResponse)
-                        binding.rvMain.visibility = View.VISIBLE
-                    }
-                }
                 makeText(this@MainActivity, "Tidak ada koneksi internet", Toast.LENGTH_LONG).show()
             }
         })

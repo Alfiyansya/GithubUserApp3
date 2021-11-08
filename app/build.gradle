@@ -24,7 +24,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
         debug {
-            buildConfigField "String","API_TOKEN","PUT YOUR API KEY IN HERE"
+            buildConfigField "String","API_TOKEN","\"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\""
             buildConfigField("String", "BASE_URL", '"https://api.github.com/"')
         }
     }
@@ -66,14 +66,8 @@ dependencies {
     implementation 'androidx.room:room-runtime:2.3.0'
     kapt 'androidx.room:room-compiler:2.3.0'
     testImplementation 'junit:junit:4.13.2'
-    testImplementation "org.mockito:mockito-core:3.6.0"
-    testImplementation "org.mockito:mockito-inline:3.6.0"
     testImplementation 'androidx.arch.core:core-testing:2.1.0'
-    testImplementation 'com.nhaarman.mockitokotlin2:mockito-kotlin:2.2.0'
-    implementation "androidx.test.espresso:espresso-idling-resource:3.4.0"
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
     androidTestImplementation "androidx.test:runner:1.4.0"
     androidTestImplementation "androidx.test:rules:1.4.0"
-    androidTestImplementation "androidx.test.espresso:espresso-contrib:3.4.0"
 }

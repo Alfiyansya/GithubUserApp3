@@ -30,32 +30,29 @@ class DetailActivity : AppCompatActivity() {
         binding = ActivityDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
         binding.detailDataLayout.visibility = View.GONE
-        checkInternetConnection()
-    }
-
-    private fun checkInternetConnection() {
         val user = intent.getParcelableExtra<UserResponse>(KEY_USER)
         val username = intent.getStringExtra(KEY_USERNAME)
-        val favorite = FavoriteEntity()
-        favorite.login = username
-        favorite.id = intent.getIntExtra(KEY_ID, 0)
-        favorite.avatar_url = user?.avatarUrl
+        username?.let{
+            user?.let { userResponse -> checkInternetConnection(it, userResponse) } }
+    }
+
+    private fun checkInternetConnection(username : String, user : UserResponse) {
         val networkConnection = NetworkConnection(applicationContext)
         networkConnection.observe(this, { isConnected ->
             if (isConnected) {
                 showNoInternetAnimation(false)
-                showFailedLoadData(false)
+                val favorite = FavoriteEntity()
+                favorite.login = username
+                favorite.id = intent.getIntExtra(KEY_ID, 0)
+                favorite.avatar_url = user.avatarUrl
                 val detailViewModel: DetailViewModel by viewModels {
-                    DetailViewModelFactory(username.toString(), application)
+                    DetailViewModelFactory(username, application)
                 }
                 detailViewModel.isLoading.observe(this@DetailActivity, {
                     showProgressBar(it)
                 })
-                detailViewModel.isNoInternet.observe(this@DetailActivity, {
-                    showNoInternetAnimation(it)
-                })
                 detailViewModel.isDataFailed.observe(this@DetailActivity, {
-                    showNoInternetAnimation(it)
+                    showFailedLoadData(it)
                 })
                 detailViewModel.detailUser.observe(this@DetailActivity, { userResponse ->
                     if (userResponse != null) {
@@ -98,8 +95,7 @@ class DetailActivity : AppCompatActivity() {
             } else {
                 binding.detailDataLayout.visibility = View.GONE
                 binding.detailAnimationLayout.visibility = View.VISIBLE
-                showFailedLoadData(true)
-                showNoInternetAnimation(false)
+                showNoInternetAnimation(true)
             }
         })
     }
@@ -192,7 +188,7 @@ class DetailActivity : AppCompatActivity() {
                 }
             }
         } else {
-            Log.i(TAG, "setData fun is error")
+            Log.i(TAG, "setData function is error")
         }
     }
 
