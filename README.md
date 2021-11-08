@@ -10,6 +10,26 @@ Before I explain how this application works and submission checklist, I want to 
 7. Users can view details of their favorite Github users by clicking directly on the cardview in the list of github user favorite activity
 8. Users can switch to Dark mode by going to the setting activity and clicking the switch button to Dark mode
 
+### Demo Apps
+<p align="center">
+    <img src="demo apps/main.gif"
+        alt="Demo Apps1"    
+        style="margin-right: 8px;"    
+        width="230" />
+    <img src="demo apps/search.gif"
+        alt="Demo Apps2"    
+        style="margin-right: 8px;"    
+        width="230" />
+    <img src="demo apps/favorite.gif"
+        alt="Demo Apps2"    
+        style="margin-right: 8px;"    
+        width="230" />
+    <img src="demo apps/dark mode.gif"
+        alt="Demo Apps2"    
+        style="margin-right: 8px;"    
+        width="230" />
+</p>
+
 ### Submission CheckList
 - Aplikasi bisa menambah user ke daftar favorite.
 - Aplikasi bisa menghapus user dari daftar favorite.
