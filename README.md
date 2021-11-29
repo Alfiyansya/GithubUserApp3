@@ -10,6 +10,13 @@ Before I explain how this application works and submission checklist, I want to 
 7. Users can view details of their favorite Github users by clicking directly on the cardview in the list of github user favorite activity
 8. Users can switch to Dark mode by going to the setting activity and clicking the switch button to Dark mode
 
+### Prerequisites
+
+Before running this app, you need to add your Github Personal Access Token, in your `Build.gradle(Module ..)` file:
+
+```yaml
+buildConfigField "String","API_TOKEN","PUT YOUR API KEY IN HERE"
+```
 ### Demo Apps
 <p align="center">
     <img src="demo apps/main.gif"
@@ -41,6 +48,7 @@ Before I explain how this application works and submission checklist, I want to 
 :star: :star: :star: :star: :star:
 ### Dependencies :
 - [Lifecycle & Livedata](https://developer.android.com/jetpack/androidx/releases/lifecycle)
+- [ViewModel](https://developer.android.com/topic/libraries/architecture/viewmodel)
 - [Retrofit 2](https://square.github.io/retrofit/)    
 - [OkHttp 3](https://square.github.io/okhttp/)    
 - [Glide](https://github.com/bumptech/glide)    
@@ -50,3 +58,4 @@ Before I explain how this application works and submission checklist, I want to 
 - [Lottie Android](https://github.com/airbnb/lottie-android)
 - [RoomDatabase](https://developer.android.com/reference/android/arch/persistence/room/RoomDatabase)
 - [DataStore](https://developer.android.com/topic/libraries/architecture/datastore)
+- [ViewBinding](https://developer.android.com/topic/libraries/view-binding)
